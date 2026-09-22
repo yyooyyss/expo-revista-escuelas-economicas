@@ -448,7 +448,9 @@ function updateUI() {
   // Historial con hash para poder compartir el enlace de cada página
   const slug = (slides[current].dataset.title || 'pagina').toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-');
-  history.replaceState(null, '', `#${slug}`);
+
+  // Puede fallar al abrir el archivo con file://, por eso se protege con try/catch
+  try { history.replaceState(null, '', `#${slug}`); } catch (err) { /* file:// en algunos navegadores */ }
 
   window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
 }

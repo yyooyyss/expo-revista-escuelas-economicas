@@ -121,7 +121,7 @@ body {
   position: relative; z-index: 2;
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: clamp(1.4rem, 4vw, 3rem) clamp(1rem, 4vw, 2.4rem) 8.5rem;
+  padding: clamp(1.4rem, 4vw, 3rem) clamp(1rem, 4vw, 2.4rem) 3rem;
 }
 
 .slide { display: none; }
@@ -275,7 +275,7 @@ kbd {
 /* ---------- Línea de tiempo ---------- */
 .timeline { position: relative; padding-left: 2.4rem; }
 .timeline::before {
-  content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px; width: 2px;
+  content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px;
   background: linear-gradient(180deg, var(--gold-600), var(--emerald), transparent);
   opacity: .6;
 }
@@ -483,7 +483,7 @@ kbd {
 /* ---------- Pie ---------- */
 .foot {
   position: relative; z-index: 2;
-  text-align: center; padding: 1.4rem 1rem 6.5rem;
+  text-align: center; padding: 1.4rem 1rem 6.5rem; margin-bottom: 0;
   font-size: .76rem; color: var(--muted); border-top: 1px solid rgba(232, 198, 106, .1);
 }
 .foot p { margin: 0; }
