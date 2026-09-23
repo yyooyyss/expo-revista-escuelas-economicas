@@ -514,11 +514,20 @@ kbd {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
 
-/* ---------- Impresión ---------- */
+/* ---------- Impresión / PDF ---------- */
 @media print {
+  @page { margin: 12mm; }
   .bg-layer, .nav, .topbar, .progress, .foot, .cover__hint, .btn { display: none !important; }
   body { background: #fff; color: #111; }
-  .slide { display: block !important; page-break-after: always; }
+  .deck { max-width: 100%; padding: 0; }
+  .slide { display: block !important; break-after: page; page-break-after: always; }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+  .slide--cover { min-height: auto; }
+  .cover { min-height: auto; padding: 0; }
   .slide__title, .cover__title { -webkit-text-fill-color: #111; color: #111; background: none; }
-  .card, .conclusion, .tablewrap, .callout { border-color: #ccc; background: none; box-shadow: none; }
+  .eyebrow { color: #555; }
+  .card p, .slide__lead, .cover__sub, .conclusion, .refs, .q p,
+  .opt, .keylist, .legend, .chart__note, .tl-rep, .tl-name { color: #222; }
+  .card, .conclusion, .tablewrap, .ctable, .callout, .q, .timeline,
+  .chart, .keylist, .legend, .bar { border-color: #ccc; background: none; box-shadow: none; break-inside: avoid; page-break-inside: avoid; }
 }
